@@ -1,0 +1,16 @@
+body{
+    background-image: url("../images/djkhaled.png");
+
+}
+
+header{
+    width:100%;
+    display:flex;
+    align-content: center;
+    color:gold;
+
+}
+#game-window{
+    margin:auto;
+    background:#ccc;
+}
