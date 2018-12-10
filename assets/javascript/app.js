@@ -133,7 +133,7 @@ var game = {
         $("#game-window h2").remove();
         $("#game-window").html("<h2>All done! </h2>");
         $("#game-window").append("<h3>Correct Answers: "+this.correct+"</h3>");
-        $("#game-window").append("<h3>Correct Answers: "+this.incorrect+"</h3>");
+        $("#game-window").append("<h3>Incorrect Answers: "+this.incorrect+"</h3>");
         $("#game-window").append("<h3>Unanswered: "+(questions.length-(this.incorrect+this.correct))+"</h3>");
     }
 }
