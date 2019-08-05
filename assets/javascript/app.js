@@ -75,10 +75,10 @@ var game = {
         
             $("#question"+[i+1] +"").append("<h2>" + questions[i].question + "</h2>");
 
-            $("#game-window").append("<div class=row id=question"+ [i+1] +"answers>");
+            $("#game-window").append("<div class='input-group m-1' id=question"+ [i+1] +"answers>");
 
             for (var j=0; j<questions[j].answers.length; j++){
-                $("#question"+ [i+1] +"answers").append("<input type = 'radio' name='question-"+i+"'+ value='"+questions[i].answers[j]+"'>"+questions[i].answers[j]) ;  
+                $("#question"+ [i+1] +"answers").append("<input type= 'radio' class='ml-2' id=question-"+i+"'+ value='"+questions[i].answers[j]+"'>"+questions[i].answers[j]) ;  
                 }
 
         };
