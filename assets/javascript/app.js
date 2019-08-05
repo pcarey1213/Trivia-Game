@@ -68,15 +68,19 @@ var game = {
     start: function() {
         timer = setInterval(game.countdown, 1000);
         $("#game-window").prepend("<h2> Time Remaining: <span id='counter'>120</span> Seconds </h2>");
-        for (i=0; i<questions.length; i++) {
-    
-        $("#start").remove()
-    
-        $("#game-window").append("<h2>" + questions[i].question + "</h2>");
+            for (i=0; i<questions.length; i++) {
+            $("#game-window").append("<div class=row id=question"+ [i+1] +">");
+            
+            $("#start").remove()
+        
+            $("#question"+[i+1] +"").append("<h2>" + questions[i].question + "</h2>");
+
+            $("#game-window").append("<div class=row id=question"+ [i+1] +"answers>");
 
             for (var j=0; j<questions[j].answers.length; j++){
-            $("#game-window").append("<input type = 'radio' name='question-"+i+"'+ value='"+questions[i].answers[j]+"'>"+questions[i].answers[j]) ;  
-            }
+                $("#question"+ [i+1] +"answers").append("<input type = 'radio' name='question-"+i+"'+ value='"+questions[i].answers[j]+"'>"+questions[i].answers[j]) ;  
+                }
+
         };
 
         $("#game-window").append('<br><button id="end"> Done </button>');
@@ -132,9 +136,9 @@ var game = {
         clearInterval(timer);
         $("#game-window h2").remove();
         $("#game-window").html("<h2>All done! </h2>");
-        $("#game-window").append("<h3>Correct Answers: "+this.correct+"</h3>");
-        $("#game-window").append("<h3>Incorrect Answers: "+this.incorrect+"</h3>");
-        $("#game-window").append("<h3>Unanswered: "+(questions.length-(this.incorrect+this.correct))+"</h3>");
+        $("#game-window").append("<div class='row' <h3>Correct Answers: "+this.correct+"</h3>");
+        $("#game-window").append("<div class='row' <h3>Incorrect Answers: "+this.incorrect+"</h3>");
+        $("#game-window").append("<div class='row' <h3>Unanswered: "+(questions.length-(this.incorrect+this.correct))+"</h3>");
     }
 }
     
